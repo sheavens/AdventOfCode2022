@@ -1,5 +1,13 @@
-"use strict"
+/* Advent of Code 2022 - Day 22: Monkey Map
+Follow a map using a set of instructions to move and turn
+The map is a grid of open tiles and walls.  
+The path is a set of instructions to move forward a number of tiles, and turn left or right.
+Example: 10R5 means "go forward 10 tiles, then turn clockwise 90 degrees, then go forward 5 tiles".
+If the forward movement hits a wall, stop and continue with the next instruction.
+If a movement instruction would take you off the map, it wraps around to the other side of the board.
+*/
 
+"use strict"
 // read an input file with promises
 const fs = require("fs").promises;
 const assert = require('assert');
