@@ -1,24 +1,17 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/day16_volcanoValves.js",
+            "program": "${workspaceFolder}/day23_plantingSpace2.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "type": "node"
         },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\day13_bracketedPairs.js"
-        }
     ]
 }
+
 
