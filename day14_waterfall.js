@@ -3,7 +3,7 @@ A sand grain falls vertically until it hits a wall, or another sand grain.
 Then it falls down to the left, if space free, if not down to the right..  If not stopped by a wall, 
 or by sand, it will fall into the abyss. */ 
 
-// read an input file with promises
+
 const fs = require("fs").promises
 const assert = require('assert')
 

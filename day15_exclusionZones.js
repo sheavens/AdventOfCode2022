@@ -47,7 +47,7 @@ const addMap = (key, map, add=1) => {
 
 const ptStr = (pt = [4,5]) => pt.join('_')
 const strPt = (str = '4_5') => {
-    console.log(str)
+    //console.log(str)
     return str.split('_').map(e => Number(e)) 
 }
 
@@ -118,7 +118,7 @@ const solveIt  = async() => {
     return 'Part 1 ' + excludedSet.size
 }
 
-//solveIt().then(console.log)
+solveIt().then(console.log)
 
 /* Part 2 - There is only one point solving this, so I am searching 1 manhattan distance
 from the manhattan border of each scanner, within the search area, for a co-incident point */ 
@@ -209,10 +209,6 @@ the line segments, or null if no such intersection */
     return null
 }
 
-console.log((intersect([[7,-3],[17,7]],[[0,0],[10,0]])))// === [10,0], 'test intersection')
-
-//console.log((intersection([[7,-3],[17,7]],[[0,0],[10,0]])))// === [10,0], 'test intersection')
-
 //assert(intersection([[7,-3],[17,7]],[[0,0],[10,0]])[0] === 10, 'test intersection')
         
 const sectionInRange = (line, zone) => {
@@ -242,12 +238,12 @@ const sectionInRange = (line, zone) => {
         intsect = intersect([pt1,pt2],[[Math.min(x1,x2),yMax],[Math.max(x1,x2),yMax]])
         if (intsect ) segment.push(intsect)
     }
-    console.log(line, segment)
+    // console.log(line, segment)
 
     return segment
 }
 
-console.log(sectionInRange([[7,-3],[17,7]],[[0,20],[0,20]]))// === ([[10,0][17,7]] || [[17,7],[10,0]]), 'test ssctionInRange')
+// console.log(sectionInRange([[7,-3],[17,7]],[[0,20],[0,20]]))// === ([[10,0][17,7]] || [[17,7],[10,0]]), 'test ssctionInRange')
 
 //assert(sectionInRange([[7,-3],[17,7]],[[0,20],[0,20]]) === ([[10,0][17,7]] || [[17,7],[10,0]]), 'test ssctionInRange')
 
@@ -371,7 +367,7 @@ const solveItPart2  = async() => {
         let freqMap = new Map()
         for (let s = 0; s < shapes.length; s++) {
         //compare lines from all other shapes with this one and keep intersection points
-            console.log(' working on shape ', s)
+            // console.log(' working on shape ', s)
             for (let line of shapes[s]) { // compare each line with each line of each other shape
                 for (let sc = 0; sc < shapes.length; sc++) {
                     if (sc === s) continue 
@@ -390,35 +386,6 @@ const solveItPart2  = async() => {
             }
         }
 
-
-/*             for ( let pt of Array.from(solnSets[i])) {
-                count = 0
-                for (let j = 0; j < solnSets.length; j++) {
-                    if (j === i) continue
-                    if (solnSets[j].has(pt)) count++
-                    if (count >= 4) {
-                        console.log(count, pt)
-                        solnPt = pt
-                    }
-                }
-            } */
-        /*  */
-
-/*         let count
-        for (let i = 0; i < solnSets.length; i++) {
-            console.log(' working on set ', i)
-            for ( let pt of Array.from(solnSets[i])) {
-                count = 0
-                for (let j = 0; j < solnSets.length; j++) {
-                    if (j === i) continue
-                    if (solnSets[j].has(pt)) count++
-                    if (count >= 4) {
-                        console.log(count, pt)
-                        solnPt = pt
-                    }
-                }
-            }
-        } */
         const soln = (solnPt)[0]*4000000 + (solnPt)[1]
         return 'Part 2 ' + soln
 
